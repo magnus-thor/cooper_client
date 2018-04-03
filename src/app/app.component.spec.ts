@@ -19,7 +19,6 @@ import {
 describe('MyApp Component', () => {
   let component;
   let fixture;
-  let _tokenService;
 
   let signInData = {
     email: 'test@test.com',
@@ -35,7 +34,7 @@ describe('MyApp Component', () => {
     userType: String
   };
 
-  beforeEach(async(() => {
+  beforeEach(() => {
 
     TestBed.configureTestingModule({
       declarations: [MyApp],
@@ -57,14 +56,14 @@ describe('MyApp Component', () => {
         {provide: Platform, useClass: PlatformMock},
         Angular2TokenService
       ]
-    })
-  }));
+    });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(MyApp);
     component = fixture.componentInstance;
     component.ngOnInit();
   });
+
+
 
   it('should be created', () => {
     expect(component instanceof MyApp).toBe(true);
